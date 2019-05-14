@@ -25,6 +25,8 @@ if platform.system() == "Darwin":
     library_dirs += ["/usr/local/opt/jpeg-turbo/lib/"]
 elif platform.system() == "Linux":
     libs = ["rt", "uvc", "turbojpeg"]
+    include_dirs += ["/usr/local/include/"]
+    library_dirs += ["/usr/local/lib/"]
 elif platform.system() == "Windows":
     pack_dir = ""
     uvc_dir = "C:\\work\\libuvc"
