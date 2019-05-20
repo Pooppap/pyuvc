@@ -542,7 +542,7 @@ cdef class Capture:
         status = uvc.uvc_stream_open_ctrl(self.devh, &self.strmh, &self.ctrl)
         if status != uvc.UVC_SUCCESS:
             raise InitError("Can't open stream control: Error:'%s'."%uvc_error_codes[status])
-        status = uvc.uvc_stream_start(self.strmh, NULL, NULL,self._bandwidth_factor,0)
+        status = uvc.uvc_stream_start(self.strmh, NULL, NULL, 0)
         if status != uvc.UVC_SUCCESS:
             raise InitError("Can't start isochronous stream: Error:'%s'."%uvc_error_codes[status])
         self._stream_on = 1
